@@ -1,0 +1,4 @@
+shell -${SHELL}
+caption always "%-w%{= kr}%50>%n%f* %t%{-}%+w%<"
+defscrollback 8192
+startup_message off
