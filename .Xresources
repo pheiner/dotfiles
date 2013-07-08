@@ -1,11 +1,16 @@
 URxvt.geometry:	160x50
 URxvt.scrollBar: false
-URxvt*font:	-*-terminus-medium-*-*-*-16-*-*-*-*-*-*-u
-URxvt.saveLines: 8192
+!URxvt*font:	-*-*-*-*-*-*-9-*-*-*-*-*-*-u
+*font:		-*-terminus-*-*-*-*-14-*-*-*-*-*-*-*
+URxvt.saveLines: 65536
+
 URxvt.iconFile:    /usr/share/pixmaps/gnome-term-linux2.png
+
+*background:	 rgb:00/00/00
+*foreground:	 rgb:dd/dd/dd
  
 !black
-*color0:         rgb:19/19/19
+*color0:         rgb:18/18/18
 *color8:         rgb:25/25/25
 !red
 *color1:         rgb:80/32/32
@@ -28,3 +33,4 @@ URxvt.iconFile:    /usr/share/pixmaps/gnome-term-linux2.png
 !white
 *color7:         rgb:ff/ff/ff
 *color15:        rgb:dd/dd/dd
+

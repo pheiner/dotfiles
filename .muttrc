@@ -1,0 +1,112 @@
+source ~/.mutt/accounts
+
+set askcc=no
+set confirmappend=no
+set abort_unmodified=no
+set attribution='%n wrote on %d:'
+set mime_forward=ask-no
+set forward_format = "Fwd: [%n: %s]"
+set envelope_from
+set forward_quote
+# $history_file
+set history=100
+set include=yes
+set pager_stop
+set save_empty
+# set thorough_search
+set tilde
+
+#set query_command="lbdbq '%s'"
+
+set move=no                                     ## Stop asking to "move read messages to mbox"!
+set header_cache="~/.mutt/cache"
+set charset=utf-8
+set send_charset=utf-8
+set edit_headers
+set sort=threads
+set editor="vim -c 'set tw=72' +/^$ ++1"
+set mark_old                                  ## Don't mark unread messages as old when quitting.
+
+
+## Set the look and feel of the Index View
+set date_format="%a, %b %d, %Y at %I:%M:%S%p %Z"
+#set index_format="%4C -> %Z %{[%d/%m/%y - %H:%M:%S]} [ %-51.51f ]  [%-40.40t]   (%?l?%4l&%4c?)   %s"
+#set index_format="%4C -> %Z %[[%d/%m/%y - %H:%M:%S]] [ %-51.51f ]  (%?l?%4l&%4c?)   %s"
+
+## Allow you to 'change' the from address
+#macro compose v "<edit-from>^identity_<tab>" "Select from"
+macro compose v "<edit-from>^Uidentity_<tab>" "Select from"
+macro index M "T.*\n;WN" "Mark all messages as read"
+
+# color of folders with new mail
+color sidebar_new brightgreen default
+set sidebar_width=39
+set sidebar_visible=yes
+set sidebar_delim=' '
+set sidebar_sort=yes
+set sidebar_folderindent=yes
+set sidebar_shortpath=yes
+
+# b toggles sidebar visibility
+macro index S '<enter-command>toggle sidebar_visible<enter><refresh>'
+macro pager S '<enter-command>toggle sidebar_visible<enter><redraw-screen>'
+
+
+#folder-hook . 'macro index d "<save-message>=Deleted<quote-char> Messages<enter>"'
+
+## Colours
+color   normal                  white default
+color   attachment              brightyellow default
+color   hdrdefault              yellow default
+color   indicator               white black
+color   markers                 brightred default
+color   quoted                  green default
+color   signature               cyan default
+color   status                  brightgreen black
+color   index                   green default ~R
+color   index                   brightgreen default ~N
+color   index                   red default ~O
+color   index                   brightyellow default ~T
+color   index                   brightyellow red ~F
+color   index                   black default ~D
+color   tilde                   black default
+color   tree                    black default
+color   header                  brightyellow default ^From:
+#color   header                  brightyellow default ^To:
+#color   header                  brightcyan default ^Reply-To:
+#color   header                  brightgreen default ^Cc:
+color   header                  brightwhite default ^Subject:
+color   body                    brightyellow default [\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+
+color   body                    brightgreen default (https?|ftp)://[\-\.,/%~_:?&=\#a-zA-Z0-9]+
+
+
+
+## Key Maps
+bind    generic <OA>    previous-entry
+bind    generic <Down>  next-entry
+bind    index   <OA>    previous-entry
+bind    index   <Down>  next-entry
+bind    index   <delete> delete-message
+bind    index   \CG             imap-fetch-mail
+bind    pager   <up>    previous-line
+bind    pager   <down>  next-line
+bind    pager   <left>  previous-entry
+bind    pager   <right> next-entry
+bind    pager   <delete> delete-message
+
+bind    index   \CP     sidebar-prev
+bind    index   \CN     sidebar-next
+bind    index   \CO     sidebar-open
+bind    pager   \CP     sidebar-prev
+bind    pager   \CN     sidebar-next
+bind    pager   \CO     sidebar-open
+
+bind index y noop
+bind pager y noop
+bind generic y noop
+
+set alias_file = "~/.mutt/aliases"
+set sort_alias = alias
+set reverse_alias = yes
+source $alias_file
+
