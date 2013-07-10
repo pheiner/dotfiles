@@ -64,8 +64,11 @@ color   quoted                  green default
 color   signature               cyan default
 color   status                  brightgreen black
 color   index                   green default ~R
+color	index					blue default ~l
+color	index					yellow default ^~p
 color   index                   brightgreen default ~N
 color   index                   red default ~O
+color	index					cyan default ~Q
 color   index                   brightyellow default ~T
 color   index                   brightyellow red ~F
 color   index                   black default ~D
