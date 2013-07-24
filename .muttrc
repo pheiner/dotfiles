@@ -29,9 +29,9 @@ set mark_old                                  ## Don't mark unread messages as o
 
 
 ## Set the look and feel of the Index View
-set date_format="%a, %b %d, %Y at %I:%M:%S%p %Z"
-#set index_format="%4C -> %Z %{[%d/%m/%y - %H:%M:%S]} [ %-51.51f ]  [%-40.40t]   (%?l?%4l&%4c?)   %s"
-#set index_format="%4C -> %Z %[[%d/%m/%y - %H:%M:%S]] [ %-51.51f ]  (%?l?%4l&%4c?)   %s"
+set date_format="%Y-%m-%d %H:%M:%S"
+set index_format="%5C %Z %D %-25.25F %s"
+# the default: set index_format="%4C %Z %{%b %d} %-15.15L (%4l) %s"
 
 ## Allow you to 'change' the from address
 #macro compose v "<edit-from>^identity_<tab>" "Select from"
@@ -63,17 +63,20 @@ color   markers                 brightred default
 color   quoted                  green default
 color   signature               cyan default
 color   status                  brightgreen black
+color   tilde                   black default
+color   tree                    black default
 color   index                   green default ~R
 color	index					blue default ~l
 color	index					yellow default ^~p
 color   index                   brightgreen default ~N
 color   index                   red default ~O
 color	index					cyan default ~Q
+color   index                   default  green  '~s OK$'
+color   index                   default  yellow  '~s WARNING$'
+color   index                   default  red  '~s CRITICAL$'
 color   index                   brightyellow default ~T
 color   index                   brightyellow red ~F
 color   index                   black default ~D
-color   tilde                   black default
-color   tree                    black default
 color   header                  brightyellow default ^From:
 #color   header                  brightyellow default ^To:
 #color   header                  brightcyan default ^Reply-To:
