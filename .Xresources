@@ -1,36 +1,131 @@
 URxvt.geometry:	160x50
 URxvt.scrollBar: false
-!URxvt*font:	-*-*-*-*-*-*-9-*-*-*-*-*-*-u
-*font:		-*-terminus-*-*-*-*-14-*-*-*-*-*-*-*
+*.font:		-*-terminus-*-*-*-*-18-*-*-*-*-*-*-*
 URxvt.saveLines: 65536
 
 URxvt.iconFile:    /usr/share/pixmaps/gnome-term-linux2.png
 
-*background:	 rgb:00/00/00
-*foreground:	 rgb:dd/dd/dd
- 
-!black
-*color0:         rgb:18/18/18
-*color8:         rgb:25/25/25
-!red
-*color1:         rgb:80/32/32
-*color9:         rgb:98/2b/2b
-!green
-*color2:         rgb:5b/76/2f
-*color10:        rgb:89/b8/3f
-!brown/yellow
-*color3:         rgb:aa/99/43
-*color11:        rgb:ef/ef/60
-!blue
-*color4:         rgb:32/4c/80
-*color12:        rgb:2b/4f/98
-!magenta
-*color5:         rgb:70/6c/9a
-*color13:        rgb:82/6a/b1
-!cyan
-*color6:         rgb:92/b1/9e
-*color14:        rgb:a1/cd/cd
-!white
-*color7:         rgb:ff/ff/ff
-*color15:        rgb:dd/dd/dd
+! URxvt.background:	 rgb:00/00/00
+! URxvt.foreground:	 rgb:dd/dd/dd
+!  
+! !black
+! !URxvt.color0:         rgb:18/18/18
+! URxvt.color0:         rgb:33/33/33
+! !URxvt.color8:         rgb:25/25/25
+! URxvt.color8:         rgb:66/66/66
+! !red
+! URxvt.color1:         rgb:80/32/32
+! URxvt.color9:         rgb:98/2b/2b
+! !green
+! URxvt.color2:         rgb:5b/76/2f
+! URxvt.color10:        rgb:89/b8/3f
+! !brown/yellow
+! URxvt.color3:         rgb:aa/99/43
+! URxvt.color11:        rgb:ef/ef/60
+! !blue
+! URxvt.color4:         rgb:32/4c/80
+! URxvt.color12:        rgb:2b/4f/98
+! !magenta
+! URxvt.color5:         rgb:70/6c/9a
+! URxvt.color13:        rgb:82/6a/b1
+! !cyan
+! URxvt.color6:         rgb:92/b1/9e
+! URxvt.color14:        rgb:a1/cd/cd
+! !white
+! !URxvt.color7:         rgb:ff/ff/ff
+! URxvt.color7:         rgb:cc/cc/cc
+! !URxvt.color15:        rgb:dd/dd/dd
+! URxvt.color15:        rgb:ff/ff/ff
+! 
+! Tango color scheme with black background
+!URxvt.foreground: #C8C8C8
+!URxvt.background: #000000
+!URxvt.color0:     #2E3436
+!URxvt.color1:     #CC0000
+!URxvt.color2:     #4E9A06
+!URxvt.color3:     #C4A000
+!URxvt.color4:     #3465A4
+!URxvt.color5:     #75507B
+!URxvt.color6:     #06989A
+!URxvt.color7:     #D3D7CF
+!URxvt.color8:     #555753
+!URxvt.color9:     #EF2929
+!URxvt.color10:    #8AE234
+!URxvt.color11:    #FCE94F
+!URxvt.color12:    #729FCF
+!URxvt.color13:    #AD7FA8
+!URxvt.color14:    #34E2E2
+!URxvt.color15:    #EEEEEC
+
+XLock.mode: blank
+! Solarized color scheme for the X Window System
+!
+! http://ethanschoonover.com/solarized
+
+
+! Common
+
+#define S_yellow        #b58900
+#define S_orange        #cb4b16
+#define S_red           #dc322f
+#define S_magenta       #d33682
+#define S_violet        #6c71c4
+#define S_blue          #268bd2
+#define S_cyan          #2aa198
+#define S_green         #859900
+
+
+! Dark
+
+#define S_base03        #002b36
+#define S_base02        #073642
+#define S_base01        #586e75
+#define S_base00        #657b83
+#define S_base0         #839496
+#define S_base1         #93a1a1
+#define S_base2         #eee8d5
+#define S_base3         #fdf6e3
+
+
+! Light
+
+! #define S_base03        #fdf6e3
+! #define S_base02        #eee8d5
+! #define S_base01        #93a1a1
+! #define S_base00        #839496
+! #define S_base0         #657b83
+! #define S_base1         #586e75
+! #define S_base2         #073642
+! #define S_base3         #002b36
+
+
+! To only apply colors to your terminal, for example, prefix
+! the color assignment statement with its name. Example:
+!
+! URxvt*background:            S_base03
+
+*background:              S_base03
+*foreground:              S_base0
+*fading:                  0
+*fadeColor:               S_base03
+*cursorColor:             S_base1
+*pointerColorBackground:  S_base01
+*pointerColorForeground:  S_base1
+
+*color0:                  S_base02
+*color1:                  S_red
+*color2:                  S_green
+*color3:                  S_yellow
+*color4:                  S_blue
+*color5:                  S_magenta
+*color6:                  S_cyan
+*color7:                  S_base2
+*color9:                  S_orange
+*color8:                  S_base03
+*color10:                 S_base01
+*color11:                 S_base00
+*color12:                 S_base0
+*color13:                 S_violet
+*color14:                 S_base1
+*color15:                 S_base3
 

@@ -1,4 +1,5 @@
 source ~/.mutt/accounts
+#source ~/.mutt/colors
 
 set askcc=no
 set confirmappend=no
@@ -30,7 +31,7 @@ set mark_old                                  ## Don't mark unread messages as o
 
 ## Set the look and feel of the Index View
 set date_format="%Y-%m-%d %H:%M:%S"
-set index_format="%5C %Z %D %-25.25F %s"
+set index_format="%5C %Z %D %-30.30F %s"
 # the default: set index_format="%4C %Z %{%b %d} %-15.15L (%4l) %s"
 
 ## Allow you to 'change' the from address
@@ -39,36 +40,40 @@ macro compose v "<edit-from>^Uidentity_<tab>" "Select from"
 macro index M "T.*\n;WN" "Mark all messages as read"
 
 # color of folders with new mail
-color sidebar_new brightgreen default
-set sidebar_width=39
-set sidebar_visible=yes
-set sidebar_delim=' '
-set sidebar_sort=yes
-set sidebar_folderindent=yes
-set sidebar_shortpath=yes
+#color sidebar_new brightgreen default
+#set sidebar_width=39
+#set sidebar_visible=yes
+#set sidebar_delim=' '
+#set sidebar_sort=yes
+#set sidebar_folderindent=yes
+#set sidebar_shortpath=yes
 
 # b toggles sidebar visibility
-macro index S '<enter-command>toggle sidebar_visible<enter><refresh>'
-macro pager S '<enter-command>toggle sidebar_visible<enter><redraw-screen>'
+#macro index S '<enter-command>toggle sidebar_visible<enter><refresh>'
+#macro pager S '<enter-command>toggle sidebar_visible<enter><redraw-screen>'
 
 
 #folder-hook . 'macro index d "<save-message>=Deleted<quote-char> Messages<enter>"'
 
-## Colours
+# Colours
 color   normal                  white default
 color   attachment              brightyellow default
 color   hdrdefault              yellow default
 color   indicator               white black
 color   markers                 brightred default
+color   quoted3                 cyan            default
+color   quoted2                 yellow          default
+color   quoted1                 red             default
+color   quoted4                 brightred       default
 color   quoted                  green default
 color   signature               cyan default
 color   status                  brightgreen black
 color   tilde                   black default
-color   tree                    black default
+color   tree                    brightgreen default
 color   index                   green default ~R
 color	index					blue default ~l
 color	index					yellow default ^~p
-color   index                   brightgreen default ~N
+color   index                   white default ~N
 color   index                   red default ~O
 color	index					cyan default ~Q
 color   index                   default  green  '~s OK$'
@@ -77,13 +82,14 @@ color   index                   default  red  '~s CRITICAL$'
 color   index                   brightyellow default ~T
 color   index                   brightyellow red ~F
 color   index                   black default ~D
+#color   index                   magenta default "~b text/calendar"
 color   header                  brightyellow default ^From:
 #color   header                  brightyellow default ^To:
 #color   header                  brightcyan default ^Reply-To:
 #color   header                  brightgreen default ^Cc:
 color   header                  brightwhite default ^Subject:
 color   body                    brightyellow default [\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+
-color   body                    brightgreen default (https?|ftp)://[\-\.,/%~_:?&=\#a-zA-Z0-9]+
+color   body                    brightred default (https?|ftp)://[\-\.,/%~_:?&=\#a-zA-Z0-9]+
 
 
 
@@ -100,12 +106,12 @@ bind    pager   <left>  previous-entry
 bind    pager   <right> next-entry
 bind    pager   <delete> delete-message
 
-bind    index   \CP     sidebar-prev
-bind    index   \CN     sidebar-next
-bind    index   \CO     sidebar-open
-bind    pager   \CP     sidebar-prev
-bind    pager   \CN     sidebar-next
-bind    pager   \CO     sidebar-open
+#bind    index   \CP     sidebar-prev
+#bind    index   \CN     sidebar-next
+#bind    index   \CO     sidebar-open
+#bind    pager   \CP     sidebar-prev
+#bind    pager   \CN     sidebar-next
+#bind    pager   \CO     sidebar-open
 
 bind index y noop
 bind pager y noop

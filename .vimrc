@@ -1,5 +1,8 @@
-if &t_Co > 2 || has("gui_running")
-  syntax on
-  set hlsearch
-endif
-set ts=4
+execute pathogen#infect()
+syntax enable
+set background=dark
+colorscheme solarized
+set hlsearch
+set tabstop=4
+set shiftwidth=4
+set expandtab
